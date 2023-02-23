@@ -7,7 +7,7 @@ export default function FullView(url) {
       style={{ height: 'calc(100vh - 54px)' }}
     >
       <iframe
-        src="https://www.66nord.com/"
+        src="https://www.motleycrowd.live/"
         width={781.846}
         height={586.385}
         className="inline-block border-0 m-0 p-0 overflow-hidden z-50
@@ -15,7 +15,7 @@ export default function FullView(url) {
       ></iframe>
 
       <iframe
-        src="https://www.66nord.com/"
+        src="https://www.motleycrowd.live/"
         width={401.869}
         height={537.128}
         className="inline-block border-0 m-0 p-0 overflow-hidden z-50
@@ -23,7 +23,7 @@ export default function FullView(url) {
       ></iframe>
 
       <iframe
-        src="https://www.66nord.com/"
+        src="https://www.motleycrowd.live/"
         width={185.558}
         height={365.904}
         className="inline-block border-0 m-0 p-0 overflow-hidden z-50
