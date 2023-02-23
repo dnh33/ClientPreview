@@ -9,7 +9,7 @@ export default function FullView(url) {
       <iframe
         src="https://aexplore.io/"
         width={994}
-        height={600}
+        height={584}
         className="inline-block border-0 m-0 p-0 overflow-hidden z-50
 "
       ></iframe>
@@ -24,7 +24,7 @@ export default function FullView(url) {
 
       <iframe
         src="https://aexplore.io/"
-        width={185.558}
+        width={194.558}
         height={365.904}
         className="inline-block border-0 m-0 p-0 overflow-hidden z-50
 "
