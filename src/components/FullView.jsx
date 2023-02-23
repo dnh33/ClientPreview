@@ -9,7 +9,7 @@ export default function FullView(url) {
       <iframe
         src="https://aexplore.io/"
         width={994}
-        height={640}
+        height={600}
         className="inline-block border-0 m-0 p-0 overflow-hidden z-50
 "
       ></iframe>
