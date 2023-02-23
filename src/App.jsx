@@ -18,7 +18,7 @@ function App() {
     setView(newView);
   };
 
-  const ShowcaseUrl = 'https://www.motleycrowd.live/';
+  const ShowcaseUrl = 'https://aexplore.io/';
 
   let content;
   switch (view) {
