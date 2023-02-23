@@ -18,7 +18,7 @@ function App() {
     setView(newView);
   };
 
-  const ShowcaseUrl = 'https://www.joox.com/';
+  const ShowcaseUrl = 'https://www.66nord.com/';
 
   let content;
   switch (view) {
