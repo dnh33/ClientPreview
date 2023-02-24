@@ -18,7 +18,7 @@ function App() {
     setView(newView);
   };
 
-  const ShowcaseUrl = 'https://aexplore.io/';
+  const ShowcaseUrl = 'https://kritiskinfrastruktur.dk';
 
   let content;
   switch (view) {
