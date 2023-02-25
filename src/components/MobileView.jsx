@@ -3,7 +3,7 @@ import React from 'react';
 export default function MobileView({ url }) {
   return (
     <center>
-      <div className="my-9">
+      <div className="mt-12 mb-20">
         <iframe
           width={373}
           height={762}
