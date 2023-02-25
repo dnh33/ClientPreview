@@ -56,6 +56,11 @@ function App() {
     }
   };
 
+  const handleToggleSettings = () => {
+    setInputVisible(false);
+    setSettingsVisible(!settingsVisible);
+  };
+
   return (
     <div className="h-full w-full flex flex-col">
       <header>
@@ -107,24 +112,27 @@ function App() {
               </button>
             </div>
           </div>
-          <div className="navbar-right flex items-center">
-            {' '}
+          <div class="navbar-right flex items-center">
             <button
-              className="navbar-input-button text-xs bg-transparent"
-              onClick={handleToggleInput}
+              class="navbar-settings-button text-xs bg-transparent"
+              onClick={handleToggleSettings}
             >
               <MdBuild />
             </button>
-            {inputVisible && (
-              <div className="navbar-input-container">
+            <div class="settings-menu hidden">
+              <div class="settings-menu-item">
+                <label for="url-input">Website URL:</label>
                 <input
                   type="text"
+                  id="url-input"
                   className="border-gray-300 rounded-md w-full px-3 py-2 leading-5 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ml-4"
                   placeholder="Enter website URL"
                   onKeyDown={handleKeyDown}
+                  value={url}
+                  onChange={handleUrlChange}
                 />
               </div>
-            )}
+            </div>
           </div>
         </nav>
       </header>

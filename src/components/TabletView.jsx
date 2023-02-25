@@ -3,7 +3,7 @@ import React from 'react';
 export default function TabletView({ url }) {
   return (
     <center>
-      <div className="my-9 border-t-8 w-auto">
+      <div className="my-9">
         <iframe
           width={972}
           height={860}
