@@ -14,7 +14,8 @@ import './App.css';
 
 function App() {
   const [view, setView] = useState('full');
-  const [url, setUrl] = useState('https://kritiskinfrastruktur.dk');
+  const [url, setUrl] = useState('https://webfair.dk');
+  const [settingsVisible, setSettingsVisible] = useState(false);
 
   const handleViewChange = (newView) => {
     setView(newView);
@@ -112,20 +113,24 @@ function App() {
               </button>
             </div>
           </div>
-          <div class="navbar-right flex items-center">
+          <div className="navbar-right flex items-center">
             <button
-              class="navbar-settings-button text-xs bg-transparent"
+              className="navbar-settings-button text-xs bg-transparent"
               onClick={handleToggleSettings}
             >
               <MdBuild />
             </button>
-            <div class="settings-menu hidden">
-              <div class="settings-menu-item">
-                <label for="url-input">Website URL:</label>
+            <div
+              className={`settings-menu ${
+                settingsVisible ? '' : 'hidden'
+              } bg-gray-900`}
+            >
+              <div className="settings-menu-item">
+                <label htmlFor="url-input">Website URL:</label>
                 <input
                   type="text"
                   id="url-input"
-                  className="border-gray-300 rounded-md w-full px-3 py-2 leading-5 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ml-4"
+                  className="border-gray-300 rounded-md w-full px-3 py-2 leading-5 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Enter website URL"
                   onKeyDown={handleKeyDown}
                   value={url}
