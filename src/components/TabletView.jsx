@@ -3,7 +3,7 @@ import React from 'react';
 export default function TabletView({ url }) {
   return (
     <center>
-      <div className="my-9">
+      <div className="grid h-screen place-items-center">
         <iframe
           width={972}
           height={860}

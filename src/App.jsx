@@ -115,7 +115,13 @@ function App() {
           </div>
           <div className="navbar-right flex items-center">
             <button
-              className="navbar-settings-button text-xs bg-transparent"
+              className={`px-4 py-2 rounded-md bg-transparent text-sm font-medium ${
+                settingsVisible
+                  ? 'bg-gray-900 text-gray-400'
+                  : 'bg-gray-900 text-gray-400'
+              } ${
+                settingsVisible && 'border-2 border-green-500 animate-pulse'
+              }`}
               onClick={handleToggleSettings}
             >
               <MdBuild />
@@ -142,7 +148,7 @@ function App() {
         </nav>
       </header>
 
-      <main className="flex-1 h-full">{content}</main>
+      <main className="flex-1">{content}</main>
     </div>
   );
 }
