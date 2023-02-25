@@ -98,3 +98,19 @@ button:focus-visible {
 iframe {
   overflow: hidden;
 }
+
+.settings-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 300px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.settings-menu.hidden {
+  display: none;
+}
