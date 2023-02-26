@@ -65,7 +65,7 @@ function App() {
   return (
     <div className="h-full w-full flex flex-col">
       <header>
-        <nav className="navbar z-50 bg-gray-900 text-white py-2 px-4 flex items-center justify-between">
+        <nav className="navbar z-90 bg-gray-900 text-white py-2 px-4 flex items-center justify-between">
           <div className="navbar-left flex items-center">
             <img src="/webfair-logo.png" alt="LOGO" className="h-5 mr-2" />
           </div>

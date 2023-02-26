@@ -6,15 +6,6 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background: linear-gradient(
-    180deg,
-    rgba(17, 24, 39, 1) 0%,
-    rgba(11, 38, 79, 1) 100%
-  );
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -30,6 +21,7 @@ a {
 a:hover {
   color: #535bf2;
 }
+
 html,
 body {
   margin: 0;
@@ -39,14 +31,7 @@ body {
   overflow: hidden;
   -ms-overflow-style: none !important; /* IE and Edge */
   scrollbar-width: none !important; /* Firefox */
-  background-image: linear-gradient(
-    to bottom right,
-    #222831,
-    #414b55,
-    #606b7a,
-    #7d8a9f,
-    #99a7c4
-  );
+  background: linear-gradient(to right, #1f2937, #252a31);
 }
 
 h1 {
@@ -65,12 +50,18 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #00eaa8;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+iframe {
+  overflow: hidden;
 }
 
 .navbar-buttons {
@@ -104,35 +95,37 @@ button:focus-visible {
   border-color: #00eaa842;
 }
 
-iframe {
-  overflow: hidden;
-}
-
 .desktop-frame {
   width: 100vw;
   height: 100vh;
 }
 
+.border-common {
+  border: solid #4d4d4d;
+  border-width: 50px 6px 50px 6px;
+  border-radius: 20px;
+}
+
 .desktop-border {
-  border-width: 35px 12px 32px;
-  outline: 1px solid black;
-  border-style: solid;
-  border-color: #4d4d4d;
-  box-shadow: 0 3px 7px rgba(5, 5, 6, 0.5);
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  align-self: end;
 }
+
 .tablet-border {
-  border-top: 52.5px solid #4d4d4d;
-  border-right: 18px solid #4d4d4d;
-  border-bottom: 28px solid #4d4d4d;
-  border-left: 18px solid #4d4d4d;
-  border-radius: 20px;
+  border-top-width: 52.5px;
+  border-right-width: 18px;
+  border-bottom-width: 28px;
+  border-left-width: 18px;
+  align-self: end;
 }
+
 .iphone-border {
-  border-top: 28.5px solid #4d4d4d;
-  border-right: 9px solid #4d4d4d;
-  border-bottom: 20px solid #4d4d4d;
-  border-left: 9px solid #4d4d4d;
-  border-radius: 20px;
+  border-top-width: 28.5px;
+  border-right-width: 9px;
+  border-bottom-width: 20px;
+  border-left-width: 9px;
+  align-self: end;
 }
 
 .settings-menu {
@@ -146,8 +139,7 @@ iframe {
   padding-right: 1.5rem;
   background-color: #1a202c; /* change background color */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.281);
-  border: 2px solid;
-  border-color: #00eaa8c0;
+
   border-radius: 0.5rem;
   z-index: 10;
 }
@@ -187,14 +179,16 @@ iframe {
 }
 
 .scale-box {
-  transform: scale(0.90);
+  transform: scale(0.84) !important;
 }
 
-.bund {align-self: flex-end;}
+.bund {
+  align-self: flex-end !important;
+}
 
 @media (max-width: 1439px) {
   /* styles for screens less than 1440px wide go here */
   .scale-box {
-    transform: scale(0.40) !important;
+    transform: scale(0.45) !important;
   }
 }
