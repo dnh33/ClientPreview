@@ -114,12 +114,26 @@ iframe {
   height: 100vh;
 }
 
-.iphone-frame {
+.desktop-border {
   border-width: 35px 12px 32px;
   outline: 1px solid black;
   border-style: solid;
   border-color: #4d4d4d;
   box-shadow: 0 3px 7px rgba(5, 5, 6, 0.5);
+}
+.tablet-border {
+  border-top: 52.5px solid #4d4d4d;
+  border-right: 18px solid #4d4d4d;
+  border-bottom: 18px solid #4d4d4d;
+  border-left: 18px solid #4d4d4d;
+  border-radius: 20px;
+}
+.iphone-border {
+  border-top: 28.5px solid #4d4d4d;
+  border-right: 9px solid #4d4d4d;
+  border-bottom: 20px solid #4d4d4d;
+  border-left: 9px solid #4d4d4d;
+  border-radius: 20px;
 }
 
 .settings-menu {
@@ -171,4 +185,8 @@ iframe {
 .example {
   -ms-overflow-style: none !important; /* IE and Edge */
   scrollbar-width: none !important; /* Firefox */
+}
+
+.scale-box {
+  transform: scale(0.85);
 }

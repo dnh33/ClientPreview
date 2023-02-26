@@ -3,7 +3,7 @@ import React from 'react';
 export default function IphoneView({ url }) {
   return (
     <center>
-      <div className="my-9">
+      <div className="my-9 iphone-border">
         <iframe
           width={373}
           height={762}
