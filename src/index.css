@@ -34,12 +34,11 @@ html,
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   overflow: hidden;
   -ms-overflow-style: none !important; /* IE and Edge */
   scrollbar-width: none !important; /* Firefox */
-  box-sizing: border-box;
   background-image: linear-gradient(
     to bottom right,
     #222831,
@@ -188,5 +187,14 @@ iframe {
 }
 
 .scale-box {
-  transform: scale(0.85);
+  transform: scale(0.90);
+}
+
+.bund {align-self: flex-end;}
+
+@media (max-width: 1439px) {
+  /* styles for screens less than 1440px wide go here */
+  .scale-box {
+    transform: scale(0.40) !important;
+  }
 }
