@@ -25,7 +25,7 @@ export default function FullView({ url }) {
         {iframeUrls.map((iframeUrl, index) => (
           <Iframe
             url={iframeUrl}
-            width={index === 0 ? 1200 : index === 1 ? 480 : 330}
+            width={index === 0 ? 1200 : index === 1 ? 480 : 300}
             height={index === 0 ? 800 : index === 1 ? 738 : 558}
             className={`inline-block border-common m-0 p-0 overflow-hidden z-50 
             ${index === 0 ? 'desktop-border' : ''}
