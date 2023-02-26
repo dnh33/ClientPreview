@@ -21,18 +21,17 @@ export default function FullView({ url }) {
 
   return (
     <div className="flex items-center justify-center h-screen scale-box">
-      <div className="flex justify-center gap-6">
+      <div className="flex justify-center gap-8">
         {iframeUrls.map((iframeUrl, index) => (
           <Iframe
             url={iframeUrl}
-            width={index === 0 ? 1200 : index === 1 ? 480 : 256}
-            height={index === 0 ? 800 : index === 1 ? 738 : 458}
+            width={index === 0 ? 1200 : index === 1 ? 480 : 330}
+            height={index === 0 ? 800 : index === 1 ? 738 : 558}
             className={`inline-block border-common m-0 p-0 overflow-hidden z-50 
             ${index === 0 ? 'desktop-border' : ''}
             ${index === 1 ? 'tablet-border' : ''}
             ${index === 2 ? 'iphone-border' : ''}
           `}
-            style={index === 0 ? { alignSelf: 'flex-end' } : {}}
             userAgent={
               index === 0
                 ? 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
