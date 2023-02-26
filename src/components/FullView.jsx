@@ -20,8 +20,8 @@ export default function FullView({ url }) {
   };
 
   return (
-    <div className="flex flex-column justify-end h-screen scale-box">
-      <div className="flex justify-between">
+    <div className="flex items-center justify-center h-screen scale-box">
+      <div className="flex justify-center gap-8">
         {iframeUrls.map((iframeUrl, index) => (
           <Iframe
             key={index}
@@ -36,7 +36,7 @@ export default function FullView({ url }) {
             style={index === 0 ? { alignSelf: 'flex-end' } : {}}
             userAgent={
               index === 0
-                ? 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+                ? 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
                 : index === 1
                 ? 'Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1'
                 : 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1'
