@@ -1,21 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Iframe from 'react-iframe';
 
 export default function FullView({ url }) {
-  const [iframeUrls] = useState([url, url, url]);
+  const [iframeUrls, setIframeUrls] = useState([url, url, url]);
+  const [inputValue, setInputValue] = useState('');
+
+  useEffect(() => {
+    if (inputValue) {
+      const newUrls = [inputValue, inputValue, inputValue];
+      setIframeUrls(newUrls);
+    } else {
+      const defaultUrls = [url, url, url];
+      setIframeUrls(defaultUrls);
+    }
+  }, [inputValue, url]);
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
 
   return (
-    <div
-      className="flex items-center justify-center"
-      style={{ height: 'calc(100vh - 54px)' }}
-    >
-      <div className="flex justify-center gap-12">
+    <div className="flex items-center justify-center h-screen">
+      <div className="flex justify-center gap-8">
         {iframeUrls.map((iframeUrl, index) => (
           <iframe
             key={index}
             src={iframeUrl}
-            width={index === 0 ? 994 : index === 1 ? 401.869 : 194.558}
-            height={index === 0 ? 584 : index === 1 ? 537.128 : 365.904}
-            className="inline-block border-0 m-0 p-0 overflow-hidden z-50"
+            width={index === 0 ? 994 : index === 1 ? 401.869 : 256}
+            height={index === 0 ? 584 : index === 1 ? 537.128 : 458}
+            className={`inline-block border-0 m-0 p-0 overflow-hidden z-50 ${
+              index === 2 ? 'iphone-frame' : ''
+            }`}
             style={{ alignSelf: 'flex-end' }}
           ></iframe>
         ))}
