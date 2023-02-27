@@ -10,12 +10,17 @@ import DesktopView from './components/DesktopView';
 import FullView from './components/FullView';
 import MobileView from './components/MobileView';
 import TabletView from './components/TabletView';
+import InputColor from 'react-input-color';
 import './App.css';
 
 function App() {
   const [view, setView] = useState('full');
   const [url, setUrl] = useState('https://webfair.dk');
   const [settingsVisible, setSettingsVisible] = useState(false);
+  const [color, setColor] = useState('#5e72e4');
+  const [bgColor, setBgColor] = useState('#1a202c');
+  const [borderColor, setBorderColor] = useState('#4d4d4d');
+  const [iconColor, setIconColor] = useState('#ffffff');
 
   const handleViewChange = (newView) => {
     setView(newView);
@@ -39,14 +44,28 @@ function App() {
       content = <DesktopView />;
   }
 
-  const [inputVisible, setInputVisible] = useState(false);
-
-  function handleToggleInput() {
-    setInputVisible(!inputVisible);
-  }
-
   const handleUrlChange = (event) => {
     setUrl(event.target.value);
+  };
+
+  const handleColorChange = (value) => {
+    setColor(value.hex);
+  };
+
+  const handleBgColorChange = (value) => {
+    setBgColor(value.hex);
+  };
+
+  const handleBorderColorChange = (color) => {
+    setBorderColor(color);
+  };
+
+  const handleIconColorChange = (color) => {
+    setIconColor(color);
+  };
+
+  const handleToggleSettings = () => {
+    setSettingsVisible(!settingsVisible);
   };
 
   const handleKeyDown = (event) => {
@@ -57,15 +76,16 @@ function App() {
     }
   };
 
-  const handleToggleSettings = () => {
-    setInputVisible(false);
-    setSettingsVisible(!settingsVisible);
-  };
-
   return (
-    <div className="h-full w-full flex flex-col">
+    <div
+      className="h-full w-full flex flex-col"
+      style={{ backgroundColor: bgColor }}
+    >
       <header>
-        <nav className="navbar z-90 bg-gray-900 text-white py-2 px-4 flex items-center justify-between">
+        <nav
+          className="navbar z-90 bg-gray-900 text-white py-2 px-4 flex items-center justify-between"
+          style={{ backgroundColor: color }}
+        >
           <div className="navbar-left flex items-center">
             <img src="/webfair-logo.png" alt="LOGO" className="h-5 mr-2" />
           </div>
@@ -141,6 +161,32 @@ function App() {
                   onKeyDown={handleKeyDown}
                   value={url}
                   onChange={handleUrlChange}
+                />
+              </div>
+              <div className="settings-menu-item">
+                <label>Navbar Color:</label>
+                <InputColor
+                  initialValue="#111827"
+                  onChange={handleColorChange}
+                  placement="left"
+                />
+                <label>Background Color:</label>
+                <InputColor
+                  initialValue={bgColor}
+                  onChange={handleBgColorChange}
+                  placement="left"
+                />
+                <label>Border Color:</label>
+                <InputColor
+                  initialValue="#4d4d4d"
+                  onChange={handleBorderColorChange}
+                  placement="left"
+                />
+                <label>Icon Color:</label>
+                <InputColor
+                  initialValue="#ffffff"
+                  onChange={handleIconColorChange}
+                  placement="left"
                 />
               </div>
             </div>

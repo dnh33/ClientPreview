@@ -3,7 +3,7 @@ import React from 'react';
 export default function MobileView({ url }) {
   return (
     <center>
-      <div className="flex p-24 h-screen rounded-lg scale-90">
+      <div className="p-24 h-screen rounded-lg scale-90">
         <iframe
           width={332}
           height={568}
