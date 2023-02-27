@@ -4,7 +4,7 @@ import Iframe from 'react-iframe';
 export default function TabletView({ url }) {
   return (
     <center>
-      <div className="rounded-xl scale-90 h-screen">
+      <div className="rounded-xl -mt-2 scale-90 h-screen">
         <Iframe
           url={url}
           width="972px"
