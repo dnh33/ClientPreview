@@ -172,18 +172,8 @@ iframe {
   display: none !important;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.example {
-  -ms-overflow-style: none !important; /* IE and Edge */
-  scrollbar-width: none !important; /* Firefox */
-}
-
 .scale-box {
-  transform: scale(0.84) !important;
-}
-
-.bund {
-  align-self: flex-end !important;
+  transform: scale(0.7) !important;
 }
 
 @media (max-width: 1439px) {
