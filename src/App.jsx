@@ -17,10 +17,11 @@ function App() {
   const [view, setView] = useState('full');
   const [url, setUrl] = useState('https://webfair.dk');
   const [settingsVisible, setSettingsVisible] = useState(false);
-  const [color, setColor] = useState('#5e72e4');
+  const [color, setColor] = useState('#111827');
   const [bgColor, setBgColor] = useState('#1a202c');
-  const [borderColor, setBorderColor] = useState('#4d4d4d');
-  const [iconColor, setIconColor] = useState('#ffffff');
+  const [borderColor, setBorderColor] = useState('');
+  const [iconColor, setIconColor] = useState('#FFF');
+  const [navBtnHover, setNavBtnHover] = useState('#00eaa8');
 
   const handleViewChange = (newView) => {
     setView(newView);
@@ -57,11 +58,14 @@ function App() {
   };
 
   const handleBorderColorChange = (color) => {
-    setBorderColor(color);
+    setBorderColor(color.hex);
   };
 
   const handleIconColorChange = (color) => {
-    setIconColor(color);
+    setIconColor(color.hex);
+  };
+  const handleBtnHoverColorChange = (color) => {
+    setNavBtnHover(color.hex);
   };
 
   const handleToggleSettings = () => {
@@ -96,6 +100,11 @@ function App() {
                 className={`navbar-button flex items-center gap-2 ${
                   view === 'desktop' ? 'active' : ''
                 }`}
+                style={{
+                  backgroundColor: color,
+                  borderColor: borderColor,
+                  color: iconColor,
+                }}
                 onClick={() => handleViewChange('desktop')}
               >
                 <MdDesktopMac />
@@ -106,6 +115,11 @@ function App() {
                 className={`navbar-button flex items-center gap-2 ${
                   view === 'tablet' ? 'active' : ''
                 }`}
+                style={{
+                  backgroundColor: color,
+                  borderColor: borderColor,
+                  color: iconColor,
+                }}
                 onClick={() => handleViewChange('tablet')}
               >
                 <MdTabletMac />
@@ -116,6 +130,11 @@ function App() {
                 className={`navbar-button flex items-center gap-2 ${
                   view === 'mobile' ? 'active' : ''
                 }`}
+                style={{
+                  backgroundColor: color,
+                  borderColor: borderColor,
+                  color: iconColor,
+                }}
                 onClick={() => handleViewChange('mobile')}
               >
                 <MdPhoneIphone />
@@ -126,6 +145,12 @@ function App() {
                 className={`navbar-button flex items-center gap-2 ${
                   view === 'full' ? 'active' : ''
                 }`}
+                style={{
+                  backgroundColor: color,
+                  borderColor: borderColor,
+                  color: iconColor,
+                  '--hover-color': navBtnHover,
+                }}
                 onClick={() => handleViewChange('full')}
               >
                 <MdDevicesOther />
@@ -166,7 +191,7 @@ function App() {
               <div className="settings-menu-item">
                 <label>Navbar Color:</label>
                 <InputColor
-                  initialValue="#111827"
+                  initialValue={color}
                   onChange={handleColorChange}
                   placement="left"
                 />
@@ -178,14 +203,20 @@ function App() {
                 />
                 <label>Border Color:</label>
                 <InputColor
-                  initialValue="#4d4d4d"
+                  initialValue={borderColor}
                   onChange={handleBorderColorChange}
                   placement="left"
                 />
                 <label>Icon Color:</label>
                 <InputColor
-                  initialValue="#ffffff"
+                  initialValue={iconColor}
                   onChange={handleIconColorChange}
+                  placement="left"
+                />
+                <label>Button Hover Color:</label>
+                <InputColor
+                  initialValue={navBtnHover}
+                  onChange={handleBtnHoverColorChange}
                   placement="left"
                 />
               </div>
@@ -194,7 +225,7 @@ function App() {
         </nav>
       </header>
 
-      <main className="flex-1">{content}</main>
+      <main>{content}</main>
     </div>
   );
 }

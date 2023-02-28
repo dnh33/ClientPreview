@@ -105,7 +105,7 @@ iframe {
   outline: none;
   text-decoration: none;
   &:hover {
-    border-color: $border-color_1;
+    border-color: $border-color_1 !important;
   }
   &:focus {
     outline: 4px auto -webkit-focus-ring-color;
@@ -115,7 +115,7 @@ iframe {
   }
 }
 .navbar-button.active {
-  border-color: $border-color_2;
+  border-color: $border-color_2 !important;
 }
 .desktop-frame {
   width: 100vw;
