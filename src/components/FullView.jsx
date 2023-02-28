@@ -33,7 +33,6 @@ export default function FullView({ url }) {
             ${index === 2 ? 'iphone-border' : ''}
             
           `}
-            loading="lazy"
           />
         ))}
       </div>
