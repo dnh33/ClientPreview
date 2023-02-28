@@ -31,7 +31,9 @@ export default function FullView({ url }) {
             ${index === 0 ? 'desktop-border' : ''}
             ${index === 1 ? 'tablet-border' : ''}
             ${index === 2 ? 'iphone-border' : ''}
+            
           `}
+            loading="lazy"
           />
         ))}
       </div>
