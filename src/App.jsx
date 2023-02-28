@@ -17,10 +17,10 @@ function App() {
   const [view, setView] = useState('full');
   const [url, setUrl] = useState('https://webfair.dk');
   const [settingsVisible, setSettingsVisible] = useState(false);
-  const [color, setColor] = useState('#111827');
-  const [bgColor, setBgColor] = useState('#1a202c');
+  const [color, setColor] = useState('');
+  const [bgColor, setBgColor] = useState('');
   const [borderColor, setBorderColor] = useState('');
-  const [iconColor, setIconColor] = useState('#FFF');
+  const [iconColor, setIconColor] = useState('');
 
   const handleViewChange = (newView) => {
     setView(newView);
