@@ -21,29 +21,10 @@ function App() {
   const [bgColor, setBgColor] = useState('#1a202c');
   const [borderColor, setBorderColor] = useState('');
   const [iconColor, setIconColor] = useState('#FFF');
-  const [navBtnHover, setNavBtnHover] = useState('#00eaa8');
 
   const handleViewChange = (newView) => {
     setView(newView);
   };
-
-  let content;
-  switch (view) {
-    case 'desktop':
-      content = <DesktopView url={url} />;
-      break;
-    case 'tablet':
-      content = <TabletView url={url} />;
-      break;
-    case 'mobile':
-      content = <MobileView url={url} />;
-      break;
-    case 'full':
-      content = <FullView url={url} />;
-      break;
-    default:
-      content = <DesktopView />;
-  }
 
   const handleUrlChange = (event) => {
     setUrl(event.target.value);
@@ -64,9 +45,6 @@ function App() {
   const handleIconColorChange = (color) => {
     setIconColor(color.hex);
   };
-  const handleBtnHoverColorChange = (color) => {
-    setNavBtnHover(color.hex);
-  };
 
   const handleToggleSettings = () => {
     setSettingsVisible(!settingsVisible);
@@ -79,6 +57,24 @@ function App() {
       console.log(url);
     }
   };
+
+  let content;
+  switch (view) {
+    case 'desktop':
+      content = <DesktopView url={url} />;
+      break;
+    case 'tablet':
+      content = <TabletView url={url} />;
+      break;
+    case 'mobile':
+      content = <MobileView url={url} />;
+      break;
+    case 'full':
+      content = <FullView url={url} />;
+      break;
+    default:
+      content = <DesktopView />;
+  }
 
   return (
     <div
@@ -149,7 +145,6 @@ function App() {
                   backgroundColor: color,
                   borderColor: borderColor,
                   color: iconColor,
-                  '--hover-color': navBtnHover,
                 }}
                 onClick={() => handleViewChange('full')}
               >
@@ -211,12 +206,6 @@ function App() {
                 <InputColor
                   initialValue={iconColor}
                   onChange={handleIconColorChange}
-                  placement="left"
-                />
-                <label>Button Hover Color:</label>
-                <InputColor
-                  initialValue={navBtnHover}
-                  onChange={handleBtnHoverColorChange}
                   placement="left"
                 />
               </div>
