@@ -74,15 +74,9 @@ button {
   &:hover {
     border-color: $border-color_1;
   }
-  &:focus {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
-  &:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
 }
 iframe {
-  overflow: hidden;
+  overflow: hidden !important;
   background-color: $background-color_2;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -105,17 +99,11 @@ iframe {
   outline: none;
   text-decoration: none;
   &:hover {
-    border-color: $border-color_1 !important;
-  }
-  &:focus {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
-  &:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
+    border-color: $border-color_1;
   }
 }
 .navbar-button.active {
-  border-color: $border-color_2 !important;
+  box-shadow: inset 20px 20px 77px #bebebe03, inset -20px -20px 77px #ffffff06;
 }
 .desktop-frame {
   width: 100vw;
