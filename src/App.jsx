@@ -15,7 +15,7 @@ import './App.css';
 
 function App() {
   const [view, setView] = useState('full');
-  const [url, setUrl] = useState('https://webfair.dk');
+  const [url, setUrl] = useState('https://venzo.com');
   const [settingsVisible, setSettingsVisible] = useState(false);
   const [color, setColor] = useState('');
   const [bgColor, setBgColor] = useState('');
