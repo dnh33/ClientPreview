@@ -19,7 +19,7 @@ export default defineConfig({
           fontSrc: ["'self'"],
         },
       }),
-      apply: 'serve',
+      apply: ['serve', 'build'],
     },
   ],
 });
