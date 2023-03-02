@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import {
   MdDevicesOther,
   MdDesktopMac,
@@ -215,6 +216,7 @@ function App() {
       </header>
 
       <main>{content}</main>
+      <Analytics />
     </div>
   );
 }
