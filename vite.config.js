@@ -17,7 +17,7 @@ export default defineConfig({
           styleSrc: ["'self'", "'unsafe-inline'"],
           scriptSrc: ["'self'", 'venzo.com', 'webfair.dk', "'unsafe-inline'"],
           imgSrc: ["'self'", 'data:', 'blob:'],
-          fontSrc: ["'self'"],
+          fontSrc: ["'self'", 'data:'], // add data: protocol
           connectSrc: [
             "'self'",
             'vitals.vercel-insights.com',
@@ -27,7 +27,7 @@ export default defineConfig({
           ],
         },
       }),
-      apply: ['serve'],
+      apply: ['serve', 'build'],
     },
     // input https://www.npmjs.com/package/html-minifier-terser options
     ViteMinifyPlugin({}),
