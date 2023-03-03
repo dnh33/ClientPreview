@@ -27,7 +27,7 @@ export default defineConfig({
           ],
         },
       }),
-      apply: ['serve', 'build'],
+      apply: ['serve'],
     },
     // input https://www.npmjs.com/package/html-minifier-terser options
     ViteMinifyPlugin({}),
