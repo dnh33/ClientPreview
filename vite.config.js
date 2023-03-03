@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import { ViteMinifyPlugin } from 'vite-plugin-minify';
 import react from '@vitejs/plugin-react';
 import helmet from 'helmet';
 
@@ -28,5 +29,7 @@ export default defineConfig({
       }),
       apply: ['serve', 'build'],
     },
+    // input https://www.npmjs.com/package/html-minifier-terser options
+    ViteMinifyPlugin({}),
   ],
 });
