@@ -14,18 +14,16 @@ export default defineConfig({
       ...helmet.contentSecurityPolicy({
         directives: {
           defaultSrc: ["'self'"],
-          styleSrc: ["'self'", 'venzo.com', 'webfair.dk', "'unsafe-inline'"],
-          scriptSrc: ["'self'", 'venzo.com', 'webfair.dk', "'unsafe-inline'"],
-          imgSrc: ["'self'", 'data:', 'blob:'],
-          fontSrc: ["'self'", 'venzo.com', 'webfair.dk'],
-          connectSrc: [
+          styleSrc: ["'self'", "'unsafe-inline'"],
+          scriptSrc: [
             "'self'",
+            "'strict-dynamic'",
+            'venzo.com',
             'webfair.dk',
             'h-plus.dk',
-            'tmmj.webfair.dk',
-            'aexplore.io',
-            'h-plus.dk',
           ],
+          imgSrc: ["'self'", 'data:', 'blob:'],
+          fontSrc: ["'self'"],
         },
       }),
       apply: ['serve', 'build'],
