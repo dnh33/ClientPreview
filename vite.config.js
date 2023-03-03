@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import { ViteMinifyPlugin } from 'vite-plugin-minify';
 import react from '@vitejs/plugin-react';
-import helmet from 'helmet';
+/* import helmet from 'helmet'; */
 
 export default defineConfig({
   plugins: [
@@ -9,7 +9,7 @@ export default defineConfig({
       // Enable React Refresh
       fastRefresh: true,
     }),
-    // Use Helmet middleware to set CSP headers
+    /*  // Use Helmet middleware to set CSP headers
     {
       ...helmet.contentSecurityPolicy({
         directives: {
@@ -28,7 +28,7 @@ export default defineConfig({
         },
       }),
       apply: ['serve', 'build'],
-    },
+    }, */
     // input https://www.npmjs.com/package/html-minifier-terser options
     ViteMinifyPlugin({}),
   ],
