@@ -18,13 +18,7 @@ export default defineConfig({
           scriptSrc: ["'self'", "'unsafe-inline'"],
           imgSrc: ["'self'", 'data:', 'blob:'],
           fontSrc: ["'self'", 'data:'], // add data: protocol
-          connectSrc: [
-            "'self'",
-            'vitals.vercel-insights.com',
-            'webfair.dk',
-            'h-plus.dk',
-            'tmmj.webfair.dk',
-          ],
+          connectSrc: ["'self'"],
         },
       }),
       apply: ['serve', 'build'],
