@@ -213,7 +213,6 @@ function App() {
           </div>
         </nav>
       </header>
-
       <main>{content}</main>
     </div>
   );

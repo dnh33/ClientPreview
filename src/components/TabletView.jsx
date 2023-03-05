@@ -7,7 +7,7 @@ export default function TabletView({ url }) {
       <div className="rounded-xl -mt-2 scale-90 h-screen">
         <Iframe
           url={url}
-          width="972px"
+          width="940px"
           height="860px"
           className="inline-block rounded-xl border-0 m-0 p-0 overflow-hidden z-50"
         />
