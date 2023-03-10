@@ -15,13 +15,7 @@ export default defineConfig({
         directives: {
           defaultSrc: ["'self'"],
           styleSrc: ["'self'", "'unsafe-inline'"],
-          scriptSrc: [
-            "'self'",
-            "'strict-dynamic'",
-            'venzo.com',
-            'webfair.dk',
-            'h-plus.dk',
-          ],
+          scriptSrc: ["'self'", "'strict-dynamic'", 'venzo.com', 'webfair.dk'],
           imgSrc: ["'self'", 'data:', 'blob:'],
           fontSrc: ["'self'"],
         },
