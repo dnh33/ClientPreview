@@ -22,8 +22,6 @@ function App() {
   const [borderColor, setBorderColor] = useState("");
   const [iconColor, setIconColor] = useState("");
   const [error, setError] = useState(null);
-  const [useProxy, setUseProxy] = useState(false);
-  const [proxyService, setProxyService] = useState("us"); // Default to US server
 
   const handleViewChange = (newView) => {
     setView(newView);
@@ -77,58 +75,22 @@ function App() {
     setSettingsVisible(!settingsVisible);
   };
 
-  const getProxiedUrl = (url) => {
-    const encodedUrl = encodeURIComponent(url);
-    return `/proxy/${proxyService}/includes/process.php?action=update&d=${encodedUrl}`;
-  };
-
-  const handleUrlLoad = (url) => {
-    // First try direct loading
-    if (!useProxy) {
-      return url;
-    }
-    // If proxy is enabled, use proxy service
-    return getProxiedUrl(url);
-  };
-
-  const toggleProxy = () => {
-    setUseProxy(!useProxy);
-  };
-
   let content;
   switch (view) {
     case "desktop":
-      content = (
-        <DesktopView
-          url={url}
-          useProxy={useProxy}
-          proxyService={proxyService}
-        />
-      );
+      content = <DesktopView url={url} />;
       break;
     case "tablet":
-      content = (
-        <TabletView url={url} useProxy={useProxy} proxyService={proxyService} />
-      );
+      content = <TabletView url={url} />;
       break;
     case "mobile":
-      content = (
-        <MobileView url={url} useProxy={useProxy} proxyService={proxyService} />
-      );
+      content = <MobileView url={url} />;
       break;
     case "full":
-      content = (
-        <FullView url={url} useProxy={useProxy} proxyService={proxyService} />
-      );
+      content = <FullView url={url} />;
       break;
     default:
-      content = (
-        <DesktopView
-          url={url}
-          useProxy={useProxy}
-          proxyService={proxyService}
-        />
-      );
+      content = <DesktopView url={url} />;
   }
 
   return (
@@ -239,29 +201,6 @@ function App() {
                 />
                 {error && (
                   <div className="text-red-500 text-sm mt-1">{error}</div>
-                )}
-                <div className="flex items-center mt-2">
-                  <input
-                    type="checkbox"
-                    id="use-proxy"
-                    checked={useProxy}
-                    onChange={toggleProxy}
-                    className="mr-2"
-                  />
-                  <label htmlFor="use-proxy">
-                    Use Proxy (for restricted sites)
-                  </label>
-                </div>
-                {useProxy && (
-                  <select
-                    value={proxyService}
-                    onChange={(e) => setProxyService(e.target.value)}
-                    className="mt-2 w-full p-2 rounded-md"
-                  >
-                    <option value="us">US Server (Fastest for Americas)</option>
-                    <option value="eu">EU Server (Fastest for Europe)</option>
-                    <option value="asia">Asia Server (Fastest for Asia)</option>
-                  </select>
                 )}
               </div>
               <div className="settings-menu-item">
